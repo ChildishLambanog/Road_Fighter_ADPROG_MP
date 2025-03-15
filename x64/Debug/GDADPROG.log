@@ -1,0 +1,142 @@
+﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(531,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (GDADPROG.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  AbstractComponent.cpp
+  AbstractGameObject.cpp
+  AbstractPoolable.cpp
+  AbstractScene.cpp
+  AirplanePlayer.cpp
+C:\Users\ACER\source\repos\ADPROG MP Road Fighter\GDADPROG\AirplanePlayer.cpp(21,59): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+C:\Users\ACER\source\repos\ADPROG MP Road Fighter\GDADPROG\AirplanePlayer.cpp(21,59): warning C4244:         with
+C:\Users\ACER\source\repos\ADPROG MP Road Fighter\GDADPROG\AirplanePlayer.cpp(21,59): warning C4244:         [
+C:\Users\ACER\source\repos\ADPROG MP Road Fighter\GDADPROG\AirplanePlayer.cpp(21,59): warning C4244:             T=unsigned int
+C:\Users\ACER\source\repos\ADPROG MP Road Fighter\GDADPROG\AirplanePlayer.cpp(21,59): warning C4244:         ]
+C:\Users\ACER\source\repos\ADPROG MP Road Fighter\GDADPROG\AirplanePlayer.cpp(21,40): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+C:\Users\ACER\source\repos\ADPROG MP Road Fighter\GDADPROG\AirplanePlayer.cpp(21,40): warning C4244:         with
+C:\Users\ACER\source\repos\ADPROG MP Road Fighter\GDADPROG\AirplanePlayer.cpp(21,40): warning C4244:         [
+C:\Users\ACER\source\repos\ADPROG MP Road Fighter\GDADPROG\AirplanePlayer.cpp(21,40): warning C4244:             T=unsigned int
+C:\Users\ACER\source\repos\ADPROG MP Road Fighter\GDADPROG\AirplanePlayer.cpp(21,40): warning C4244:         ]
+  AirplaneSupport.cpp
+C:\Users\ACER\source\repos\ADPROG MP Road Fighter\GDADPROG\AirplaneSupport.cpp(19,59): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+C:\Users\ACER\source\repos\ADPROG MP Road Fighter\GDADPROG\AirplaneSupport.cpp(19,59): warning C4244:         with
+C:\Users\ACER\source\repos\ADPROG MP Road Fighter\GDADPROG\AirplaneSupport.cpp(19,59): warning C4244:         [
+C:\Users\ACER\source\repos\ADPROG MP Road Fighter\GDADPROG\AirplaneSupport.cpp(19,59): warning C4244:             T=unsigned int
+C:\Users\ACER\source\repos\ADPROG MP Road Fighter\GDADPROG\AirplaneSupport.cpp(19,59): warning C4244:         ]
+C:\Users\ACER\source\repos\ADPROG MP Road Fighter\GDADPROG\AirplaneSupport.cpp(19,40): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+C:\Users\ACER\source\repos\ADPROG MP Road Fighter\GDADPROG\AirplaneSupport.cpp(19,40): warning C4244:         with
+C:\Users\ACER\source\repos\ADPROG MP Road Fighter\GDADPROG\AirplaneSupport.cpp(19,40): warning C4244:         [
+C:\Users\ACER\source\repos\ADPROG MP Road Fighter\GDADPROG\AirplaneSupport.cpp(19,40): warning C4244:             T=unsigned int
+C:\Users\ACER\source\repos\ADPROG MP Road Fighter\GDADPROG\AirplaneSupport.cpp(19,40): warning C4244:         ]
+  AirplaneSupportMovement.cpp
+  ApplicationManager.cpp
+  BarQuitButton.cpp
+C:\Users\ACER\source\repos\ADPROG MP Road Fighter\GDADPROG\BarQuitButton.cpp(21,53): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+C:\Users\ACER\source\repos\ADPROG MP Road Fighter\GDADPROG\BarQuitButton.cpp(21,53): warning C4244:         with
+C:\Users\ACER\source\repos\ADPROG MP Road Fighter\GDADPROG\BarQuitButton.cpp(21,53): warning C4244:         [
+C:\Users\ACER\source\repos\ADPROG MP Road Fighter\GDADPROG\BarQuitButton.cpp(21,53): warning C4244:             T=unsigned int
+C:\Users\ACER\source\repos\ADPROG MP Road Fighter\GDADPROG\BarQuitButton.cpp(21,53): warning C4244:         ]
+C:\Users\ACER\source\repos\ADPROG MP Road Fighter\GDADPROG\BarQuitButton.cpp(21,34): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+C:\Users\ACER\source\repos\ADPROG MP Road Fighter\GDADPROG\BarQuitButton.cpp(21,34): warning C4244:         with
+C:\Users\ACER\source\repos\ADPROG MP Road Fighter\GDADPROG\BarQuitButton.cpp(21,34): warning C4244:         [
+C:\Users\ACER\source\repos\ADPROG MP Road Fighter\GDADPROG\BarQuitButton.cpp(21,34): warning C4244:             T=unsigned int
+C:\Users\ACER\source\repos\ADPROG MP Road Fighter\GDADPROG\BarQuitButton.cpp(21,34): warning C4244:         ]
+  BGMovement.cpp
+  BGObject.cpp
+  ButtonListener.cpp
+  EmptyGameObject.cpp
+  EnemyBehaviour.cpp
+C:\Users\ACER\source\repos\ADPROG MP Road Fighter\GDADPROG\EnemyBehaviour.cpp(37,70): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\ACER\source\repos\ADPROG MP Road Fighter\GDADPROG\EnemyBehaviour.cpp(42,71): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  EnemySwarmHandler.cpp
+  FontManager.cpp
+  GameObjectManager.cpp
+C:\Users\ACER\source\repos\ADPROG MP Road Fighter\GDADPROG\GameObjectManager.cpp(36,29): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+  GameObjectPool.cpp
+  GameScene.cpp
+C:\Users\ACER\source\repos\ADPROG MP Road Fighter\GDADPROG\GameScene.cpp(47,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  GenericInputController.cpp
+  Generating Code...
+  Compiling...
+  Main.cpp
+  Game.cpp
+C:\Users\ACER\source\repos\ADPROG MP Road Fighter\GDADPROG\Game.cpp(140,14): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  Entity.cpp
+  MainMenuScene.cpp
+  MainMenuScreen.cpp
+C:\Users\ACER\source\repos\ADPROG MP Road Fighter\GDADPROG\MainMenuScreen.cpp(24,53): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+C:\Users\ACER\source\repos\ADPROG MP Road Fighter\GDADPROG\MainMenuScreen.cpp(24,53): warning C4244:         with
+C:\Users\ACER\source\repos\ADPROG MP Road Fighter\GDADPROG\MainMenuScreen.cpp(24,53): warning C4244:         [
+C:\Users\ACER\source\repos\ADPROG MP Road Fighter\GDADPROG\MainMenuScreen.cpp(24,53): warning C4244:             T=unsigned int
+C:\Users\ACER\source\repos\ADPROG MP Road Fighter\GDADPROG\MainMenuScreen.cpp(24,53): warning C4244:         ]
+C:\Users\ACER\source\repos\ADPROG MP Road Fighter\GDADPROG\MainMenuScreen.cpp(24,34): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+C:\Users\ACER\source\repos\ADPROG MP Road Fighter\GDADPROG\MainMenuScreen.cpp(24,34): warning C4244:         with
+C:\Users\ACER\source\repos\ADPROG MP Road Fighter\GDADPROG\MainMenuScreen.cpp(24,34): warning C4244:         [
+C:\Users\ACER\source\repos\ADPROG MP Road Fighter\GDADPROG\MainMenuScreen.cpp(24,34): warning C4244:             T=unsigned int
+C:\Users\ACER\source\repos\ADPROG MP Road Fighter\GDADPROG\MainMenuScreen.cpp(24,34): warning C4244:         ]
+  MySingletonClass.cpp
+  ObjectPoolHolder.cpp
+  PlayerInputController.cpp
+  PlayerMovement.cpp
+  Renderer.cpp
+  SceneManager.cpp
+  SFXManager.cpp
+  EnemyAirplane.cpp
+C:\Users\ACER\source\repos\ADPROG MP Road Fighter\GDADPROG\EnemyAirplane.cpp(21,53): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+C:\Users\ACER\source\repos\ADPROG MP Road Fighter\GDADPROG\EnemyAirplane.cpp(21,53): warning C4244:         with
+C:\Users\ACER\source\repos\ADPROG MP Road Fighter\GDADPROG\EnemyAirplane.cpp(21,53): warning C4244:         [
+C:\Users\ACER\source\repos\ADPROG MP Road Fighter\GDADPROG\EnemyAirplane.cpp(21,53): warning C4244:             T=unsigned int
+C:\Users\ACER\source\repos\ADPROG MP Road Fighter\GDADPROG\EnemyAirplane.cpp(21,53): warning C4244:         ]
+C:\Users\ACER\source\repos\ADPROG MP Road Fighter\GDADPROG\EnemyAirplane.cpp(21,34): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+C:\Users\ACER\source\repos\ADPROG MP Road Fighter\GDADPROG\EnemyAirplane.cpp(21,34): warning C4244:         with
+C:\Users\ACER\source\repos\ADPROG MP Road Fighter\GDADPROG\EnemyAirplane.cpp(21,34): warning C4244:         [
+C:\Users\ACER\source\repos\ADPROG MP Road Fighter\GDADPROG\EnemyAirplane.cpp(21,34): warning C4244:             T=unsigned int
+C:\Users\ACER\source\repos\ADPROG MP Road Fighter\GDADPROG\EnemyAirplane.cpp(21,34): warning C4244:         ]
+C:\Users\ACER\source\repos\ADPROG MP Road Fighter\GDADPROG\EnemyAirplane.cpp(24,53): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\ACER\source\repos\ADPROG MP Road Fighter\GDADPROG\EnemyAirplane.cpp(46,53): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  TextureManager.cpp
+  TitleMenuScreen.cpp
+C:\Users\ACER\source\repos\ADPROG MP Road Fighter\GDADPROG\TitleMenuScreen.cpp(25,53): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+C:\Users\ACER\source\repos\ADPROG MP Road Fighter\GDADPROG\TitleMenuScreen.cpp(25,53): warning C4244:         with
+C:\Users\ACER\source\repos\ADPROG MP Road Fighter\GDADPROG\TitleMenuScreen.cpp(25,53): warning C4244:         [
+C:\Users\ACER\source\repos\ADPROG MP Road Fighter\GDADPROG\TitleMenuScreen.cpp(25,53): warning C4244:             T=unsigned int
+C:\Users\ACER\source\repos\ADPROG MP Road Fighter\GDADPROG\TitleMenuScreen.cpp(25,53): warning C4244:         ]
+C:\Users\ACER\source\repos\ADPROG MP Road Fighter\GDADPROG\TitleMenuScreen.cpp(25,34): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+C:\Users\ACER\source\repos\ADPROG MP Road Fighter\GDADPROG\TitleMenuScreen.cpp(25,34): warning C4244:         with
+C:\Users\ACER\source\repos\ADPROG MP Road Fighter\GDADPROG\TitleMenuScreen.cpp(25,34): warning C4244:         [
+C:\Users\ACER\source\repos\ADPROG MP Road Fighter\GDADPROG\TitleMenuScreen.cpp(25,34): warning C4244:             T=unsigned int
+C:\Users\ACER\source\repos\ADPROG MP Road Fighter\GDADPROG\TitleMenuScreen.cpp(25,34): warning C4244:         ]
+  TitleScreenExit.cpp
+C:\Users\ACER\source\repos\ADPROG MP Road Fighter\GDADPROG\TitleScreenExit.cpp(23,53): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+C:\Users\ACER\source\repos\ADPROG MP Road Fighter\GDADPROG\TitleScreenExit.cpp(23,53): warning C4244:         with
+C:\Users\ACER\source\repos\ADPROG MP Road Fighter\GDADPROG\TitleScreenExit.cpp(23,53): warning C4244:         [
+C:\Users\ACER\source\repos\ADPROG MP Road Fighter\GDADPROG\TitleScreenExit.cpp(23,53): warning C4244:             T=unsigned int
+C:\Users\ACER\source\repos\ADPROG MP Road Fighter\GDADPROG\TitleScreenExit.cpp(23,53): warning C4244:         ]
+C:\Users\ACER\source\repos\ADPROG MP Road Fighter\GDADPROG\TitleScreenExit.cpp(23,34): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+C:\Users\ACER\source\repos\ADPROG MP Road Fighter\GDADPROG\TitleScreenExit.cpp(23,34): warning C4244:         with
+C:\Users\ACER\source\repos\ADPROG MP Road Fighter\GDADPROG\TitleScreenExit.cpp(23,34): warning C4244:         [
+C:\Users\ACER\source\repos\ADPROG MP Road Fighter\GDADPROG\TitleScreenExit.cpp(23,34): warning C4244:             T=unsigned int
+C:\Users\ACER\source\repos\ADPROG MP Road Fighter\GDADPROG\TitleScreenExit.cpp(23,34): warning C4244:         ]
+  UIButton.cpp
+C:\Users\ACER\source\repos\ADPROG MP Road Fighter\GDADPROG\UIButton.cpp(18,53): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+C:\Users\ACER\source\repos\ADPROG MP Road Fighter\GDADPROG\UIButton.cpp(18,53): warning C4244:         with
+C:\Users\ACER\source\repos\ADPROG MP Road Fighter\GDADPROG\UIButton.cpp(18,53): warning C4244:         [
+C:\Users\ACER\source\repos\ADPROG MP Road Fighter\GDADPROG\UIButton.cpp(18,53): warning C4244:             T=unsigned int
+C:\Users\ACER\source\repos\ADPROG MP Road Fighter\GDADPROG\UIButton.cpp(18,53): warning C4244:         ]
+C:\Users\ACER\source\repos\ADPROG MP Road Fighter\GDADPROG\UIButton.cpp(18,34): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+C:\Users\ACER\source\repos\ADPROG MP Road Fighter\GDADPROG\UIButton.cpp(18,34): warning C4244:         with
+C:\Users\ACER\source\repos\ADPROG MP Road Fighter\GDADPROG\UIButton.cpp(18,34): warning C4244:         [
+C:\Users\ACER\source\repos\ADPROG MP Road Fighter\GDADPROG\UIButton.cpp(18,34): warning C4244:             T=unsigned int
+C:\Users\ACER\source\repos\ADPROG MP Road Fighter\GDADPROG\UIButton.cpp(18,34): warning C4244:         ]
+C:\Users\ACER\source\repos\ADPROG MP Road Fighter\GDADPROG\UIButton.cpp(61,15): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  UIButtonInputController.cpp
+C:\Users\ACER\source\repos\ADPROG MP Road Fighter\GDADPROG\UIButtonInputController.cpp(23,63): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\ACER\source\repos\ADPROG MP Road Fighter\GDADPROG\UIButtonInputController.cpp(23,63): warning C4244:         with
+C:\Users\ACER\source\repos\ADPROG MP Road Fighter\GDADPROG\UIButtonInputController.cpp(23,63): warning C4244:         [
+C:\Users\ACER\source\repos\ADPROG MP Road Fighter\GDADPROG\UIButtonInputController.cpp(23,63): warning C4244:             T=float
+C:\Users\ACER\source\repos\ADPROG MP Road Fighter\GDADPROG\UIButtonInputController.cpp(23,63): warning C4244:         ]
+C:\Users\ACER\source\repos\ADPROG MP Road Fighter\GDADPROG\UIButtonInputController.cpp(23,42): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\ACER\source\repos\ADPROG MP Road Fighter\GDADPROG\UIButtonInputController.cpp(23,42): warning C4244:         with
+C:\Users\ACER\source\repos\ADPROG MP Road Fighter\GDADPROG\UIButtonInputController.cpp(23,42): warning C4244:         [
+C:\Users\ACER\source\repos\ADPROG MP Road Fighter\GDADPROG\UIButtonInputController.cpp(23,42): warning C4244:             T=float
+C:\Users\ACER\source\repos\ADPROG MP Road Fighter\GDADPROG\UIButtonInputController.cpp(23,42): warning C4244:         ]
+  UIText.cpp
+  Generating Code...
+  GDADPROG.vcxproj -> C:\Users\ACER\source\repos\ADPROG MP Road Fighter\x64\Debug\Road Fighter.exe
