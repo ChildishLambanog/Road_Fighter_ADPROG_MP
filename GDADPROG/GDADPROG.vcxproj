@@ -134,14 +134,38 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AbstractComponent.cpp" />
+    <ClCompile Include="AbstractGameObject.cpp" />
+    <ClCompile Include="AbstractScene.cpp" />
+    <ClCompile Include="ApplicationManager.cpp" />
+    <ClCompile Include="CarPlayer.cpp" />
     <ClCompile Include="Entity.cpp" />
     <ClCompile Include="Game.cpp" />
+    <ClCompile Include="GameObjectManager.cpp" />
+    <ClCompile Include="GenericInputController.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="PlayerInputController.cpp" />
+    <ClCompile Include="PlayerMovement.cpp" />
+    <ClCompile Include="Renderer.cpp" />
+    <ClCompile Include="SceneManager.cpp" />
+    <ClCompile Include="SFXManager.cpp" />
     <ClCompile Include="TextureManager.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AbstractComponent.h" />
+    <ClInclude Include="AbstractGameObject.h" />
+    <ClInclude Include="AbstractScene.h" />
+    <ClInclude Include="ApplicationManager.h" />
+    <ClInclude Include="CarPlayer.h" />
     <ClInclude Include="Entity.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="GameObjectManager.h" />
+    <ClInclude Include="GenericInputController.h" />
+    <ClInclude Include="PlayerInputController.h" />
+    <ClInclude Include="PlayerMovement.h" />
+    <ClInclude Include="Renderer.h" />
+    <ClInclude Include="SceneManager.h" />
+    <ClInclude Include="SFXManager.h" />
     <ClInclude Include="TextureManager.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

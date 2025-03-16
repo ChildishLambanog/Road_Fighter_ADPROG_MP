@@ -1,5 +1,4 @@
 #include "Game.h"
-#include "MySingletonClass.h"
 #include "SFXManager.h"
 #include "TextureManager.h"
 

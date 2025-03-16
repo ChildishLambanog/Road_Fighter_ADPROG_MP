@@ -1,4 +1,8 @@
 #include "Game.h"
+#include "TextureManager.h"
+#include "GameObjectManager.h"
+#include "ApplicationManager.h"
+#include "SceneManager.h"
 #include <iostream>
 
 Game::Game() : mWindow(sf::VideoMode(Game::WINDOW_WIDTH, Game::WINDOW_HEIGHT), "Rameses Amar & Ira Villanueva"), mSampleEntity()
@@ -55,12 +59,6 @@ void Game::processEvents()
 		{
 		case sf::Event::Closed:
 			mWindow.close();
-			break;
-		case sf::Event::KeyReleased:
-			if (event.key.code == sf::Keyboard::Space)
-			{
-				GameObjectManager::getInstance()->addObject(new EnemyAirplane("EnemyAirplane"));
-			}
 			break;
 		}
 		GameObjectManager::getInstance()->processInput(event);
