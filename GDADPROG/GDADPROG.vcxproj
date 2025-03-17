@@ -136,10 +136,14 @@
   <ItemGroup>
     <ClCompile Include="AbstractComponent.cpp" />
     <ClCompile Include="AbstractGameObject.cpp" />
+    <ClCompile Include="AbstractPoolable.cpp" />
     <ClCompile Include="AbstractScene.cpp" />
     <ClCompile Include="ApplicationManager.cpp" />
+    <ClCompile Include="BarQuitButton.cpp" />
+    <ClCompile Include="ButtonListener.cpp" />
     <ClCompile Include="CarPlayer.cpp" />
     <ClCompile Include="Entity.cpp" />
+    <ClCompile Include="FontManager.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameObjectManager.cpp" />
     <ClCompile Include="GenericInputController.cpp" />
@@ -150,14 +154,21 @@
     <ClCompile Include="SceneManager.cpp" />
     <ClCompile Include="SFXManager.cpp" />
     <ClCompile Include="TextureManager.cpp" />
+    <ClCompile Include="UIButton.cpp" />
+    <ClCompile Include="UIButtonInputController.cpp" />
+    <ClCompile Include="UIText.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AbstractComponent.h" />
     <ClInclude Include="AbstractGameObject.h" />
+    <ClInclude Include="AbstractPoolable.h" />
     <ClInclude Include="AbstractScene.h" />
     <ClInclude Include="ApplicationManager.h" />
+    <ClInclude Include="BarQuitButton.h" />
+    <ClInclude Include="ButtonListener.h" />
     <ClInclude Include="CarPlayer.h" />
     <ClInclude Include="Entity.h" />
+    <ClInclude Include="FontManager.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameObjectManager.h" />
     <ClInclude Include="GenericInputController.h" />
@@ -167,6 +178,9 @@
     <ClInclude Include="SceneManager.h" />
     <ClInclude Include="SFXManager.h" />
     <ClInclude Include="TextureManager.h" />
+    <ClInclude Include="UIButton.h" />
+    <ClInclude Include="UIButtonInputController.h" />
+    <ClInclude Include="UIText.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
