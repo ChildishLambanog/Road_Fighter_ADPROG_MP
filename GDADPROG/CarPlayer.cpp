@@ -43,10 +43,4 @@ void CarPlayer::processInput(sf::Event event)
 void CarPlayer::update(sf::Time deltaTime)
 {
 	AGameObject::update(deltaTime);
-
-	for (int j = 0; j < this->componentList.size(); j++)
-	{
-		this->componentList[j]->setDeltaTime(deltaTime);
-		this->componentList[j]->perform();
-	}
 }

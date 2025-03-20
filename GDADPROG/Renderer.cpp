@@ -9,6 +9,11 @@ Renderer::Renderer(std::string name) : AbstractComponent(name, AbstractComponent
 
 Renderer::~Renderer()
 {
+	//if (this->drawable != nullptr)
+	//{
+	//	delete this->drawable;
+	//}
+
 	AbstractComponent::~AbstractComponent();
 }
 
@@ -31,3 +36,4 @@ void Renderer::perform()
 {
 	this->targetWindow->draw(*this->drawable, this->renderStates);
 }
+

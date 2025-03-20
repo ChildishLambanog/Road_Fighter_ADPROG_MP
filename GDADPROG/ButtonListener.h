@@ -3,10 +3,9 @@
 class UIButton;
 
 class ButtonListener {
-public:
+public: 
 	virtual void onButtonClicked(UIButton* button) = 0;
 	virtual void onButtonReleased(UIButton* button) = 0;
 protected:
-	ButtonListener() {}
+	ButtonListener() {};
 };
-

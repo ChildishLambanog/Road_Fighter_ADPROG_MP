@@ -32,7 +32,7 @@ void UIButtonInputController::perform()
 	}
 }
 
-UIButtonInputController::~UIButtonInputController()
+UIButtonInputController::~UIButtonInputController() 
 {
 	//
 }

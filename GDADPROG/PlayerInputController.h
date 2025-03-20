@@ -19,4 +19,3 @@ private:
 	bool moveLeft = false;
 	bool moveRight = false;
 };
-

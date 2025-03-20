@@ -35,7 +35,7 @@ void UIText::setText(std::string text)
 }
 
 std::string UIText::getText()
-{
+{ 
 	return this->text->getString();
 }
 

@@ -3,7 +3,7 @@
 #include <iostream>
 #include <unordered_map>
 
-class GameObjectManager {
+class GameObjectManager{
 public:
 	static GameObjectManager* getInstance();
 	AGameObject* findObjectByName(std::string name);
@@ -27,5 +27,5 @@ private:
 
 	std::unordered_map<std::string, AGameObject*> mGameObjectMap;
 	std::vector<AGameObject*> mGameObjectList;
-};
 
+};

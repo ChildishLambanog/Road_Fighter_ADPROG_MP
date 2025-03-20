@@ -6,7 +6,7 @@
 class AbstractComponent;
 
 class AGameObject {
-public:
+public: 
 	AGameObject(std::string name);
 	virtual ~AGameObject();
 	virtual void initialize() = 0;
@@ -42,10 +42,9 @@ protected:
 
 private:
 	std::vector<AbstractComponent*> getComponentRecursiveProper(
-		AGameObject* object,
-		AbstractComponent::ComponentType type,
+		AGameObject* object, 
+		AbstractComponent::ComponentType type, 
 		std::vector<AbstractComponent*> foundList);
 	bool enabled = true;
 	AGameObject* mParent;
 };
-

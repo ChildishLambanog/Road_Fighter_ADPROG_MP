@@ -3,11 +3,11 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 
-class AGameObject;
+class AGameObject; 
 
 class AbstractComponent {
 public:
-	enum ComponentType { NotSet = -1, Script = 0, Renderer = 1, Input = 2};
+	enum ComponentType { NotSet = -1, Script = 0, Renderer = 1, Input  = 2};
 	AbstractComponent(std::string name, ComponentType type);
 	virtual ~AbstractComponent();
 
@@ -25,4 +25,3 @@ protected:
 	std::string name;
 	sf::Time deltaTime;
 };
-

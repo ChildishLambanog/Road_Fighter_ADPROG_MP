@@ -3,7 +3,7 @@
 #include "ButtonListener.h"
 
 class BarQuitButton : public AGameObject, public ButtonListener {
-public:
+public: 
 	BarQuitButton(std::string name);
 	void initialize();
 

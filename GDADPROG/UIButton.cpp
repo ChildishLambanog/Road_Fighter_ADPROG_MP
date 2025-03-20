@@ -1,11 +1,11 @@
 #include "UIButton.h"
 #include "TextureManager.h"
 #include "UIButtonInputController.h"
-#include "Renderer.h"
 #include <iostream>
+#include "Renderer.h"
 
 UIButton::UIButton(std::string name, sf::Texture* normalTexture, sf::Texture* pressedTexture) : AGameObject(name)
-{
+{ 
 	this->normalTexture = normalTexture;
 	this->pressedTexture = pressedTexture;
 }

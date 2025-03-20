@@ -3,7 +3,7 @@
 #include "ButtonListener.h"
 
 class UIButton : public AGameObject {
-public:
+public: 
 	UIButton(std::string name, sf::Texture* normalTexture, sf::Texture* pressedTexture);
 	void initialize();
 	void changeButtonToNormal();

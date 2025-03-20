@@ -39,6 +39,8 @@ void PlayerInputController::perform()
 		this->moveRight = keyFlag;
 		break;
 	}
+
+	//std::cout << "KeyFlag start Controller: " << keyFlag << std::endl;
 }
 
 bool PlayerInputController::isUp()
@@ -50,7 +52,7 @@ bool PlayerInputController::isDown()
 {
 	return this->moveDown;
 }
-
+	
 bool PlayerInputController::isLeft()
 {
 	return this->moveLeft;

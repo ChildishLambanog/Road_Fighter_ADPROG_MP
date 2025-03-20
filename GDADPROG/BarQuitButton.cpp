@@ -3,10 +3,10 @@
 #include "Game.h"
 #include "Renderer.h"
 #include "TextureManager.h"
-#include "ApplicationManager.h"
 #include "UIButton.h"
-#include "UIText.h"
 #include <iostream>
+#include "ApplicationManager.h"
+#include "UIText.h"
 
 BarQuitButton::BarQuitButton(std::string name) : AGameObject(name), ButtonListener()
 {
@@ -15,25 +15,25 @@ BarQuitButton::BarQuitButton(std::string name) : AGameObject(name), ButtonListen
 
 void BarQuitButton::initialize()
 {
-	sf::Sprite* sprite = new sf::Sprite();
-	sprite->setTexture(*TextureManager::getInstance()->getTexture("bar_1"));
-	sf::Vector2u textureSize = sprite->getTexture()->getSize();
-	sprite->setOrigin(textureSize.x / 2, textureSize.y / 2);
+	//sf::Sprite* sprite = new sf::Sprite();
+	//sprite->setTexture(*TextureManager::getInstance()->getTexture("bar_1"));
+	//sf::Vector2u textureSize = sprite->getTexture()->getSize();
+	//sprite->setOrigin(textureSize.x / 2, textureSize.y / 2);
 
-	Renderer* renderer = new Renderer("bar_1");
-	renderer->assignDrawable(sprite);
-	this->attachComponent(renderer);
+	//Renderer* renderer = new Renderer("bar_1");
+	//renderer->assignDrawable(sprite);
+	//this->attachComponent(renderer);
 
-	this->setPosition(485, 660);
-	this->transformable.setScale(0.9f, 0.9f);
+	//this->setPosition(485, 660);
+	//this->transformable.setScale(1.10f, 1.10f);
 
 	sf::Texture* btnNormal = TextureManager::getInstance()->getTexture("btn_normal");
 	sf::Texture* btnPressed = TextureManager::getInstance()->getTexture("btn_pressed");
 
 	UIButton* quitButton = new UIButton("quit_btn", btnNormal, btnPressed);
 	this->attachChild(quitButton);
-	quitButton->setPosition(160, 0);
-	quitButton->getTransformable().setScale(0.17f, 0.17f);
+	quitButton->setPosition(860, 670);
+	quitButton->getTransformable().setScale(0.235f, 0.235f);
 	quitButton->setButtonListener(this);
 
 	UIText* quitButtonText = new UIText("text_1");
@@ -58,3 +58,5 @@ void BarQuitButton::onButtonReleased(UIButton* button)
 	ApplicationManager* UIManager = ApplicationManager::getInstance();
 	UIManager->pauseApplication();
 }
+
+

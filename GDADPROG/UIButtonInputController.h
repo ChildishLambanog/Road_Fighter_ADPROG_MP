@@ -1,4 +1,5 @@
 #pragma once
+
 #include "GenericInputController.h"
 #include "ButtonListener.h"
 #include "UIButton.h"
@@ -14,4 +15,3 @@ private:
 	ButtonListener* buttonListener;
 	bool pressed = false;
 };
-

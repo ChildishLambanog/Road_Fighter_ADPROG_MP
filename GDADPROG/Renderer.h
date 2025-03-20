@@ -16,4 +16,3 @@ private:
 	sf::Drawable* drawable;
 	sf::RenderStates renderStates;
 };
-

@@ -126,7 +126,7 @@ std::vector<AbstractComponent*> AGameObject::getComponentOfType(AbstractComponen
 	for (int i = 0; i < this->componentList.size(); i++)
 	{
 		if (this->componentList[i]->getType() == type)
-		{
+		{	
 			foundList.push_back(this->componentList[i]);
 		}
 	}
@@ -137,7 +137,7 @@ std::vector<AbstractComponent*> AGameObject::getComponentOfType(AbstractComponen
 std::vector<AbstractComponent*> AGameObject::getComponentsOfTypeRecursive(AbstractComponent::ComponentType type)
 {
 	std::vector<AbstractComponent*> foundList;
-
+	
 	for (int i = 0; i < this->componentList.size(); i++)
 	{
 		if (this->componentList[i]->getType() == type)

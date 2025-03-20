@@ -17,4 +17,3 @@ private:
 	void loadFont(std::string, std::string);
 	std::unordered_map<std::string, sf::Font*> fontMap;
 };
-

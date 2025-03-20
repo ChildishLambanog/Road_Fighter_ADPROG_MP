@@ -2,7 +2,7 @@
 #include "AbstractGameObject.h"
 
 class AbstractPoolable : public AGameObject {
-public:
+public: 
 	AbstractPoolable(std::string name);
 	virtual void initialize() = 0;
 
@@ -12,4 +12,3 @@ public:
 
 	virtual AbstractPoolable* clone() = 0;
 };
-

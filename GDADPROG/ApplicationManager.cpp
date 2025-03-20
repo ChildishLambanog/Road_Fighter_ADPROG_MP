@@ -2,9 +2,10 @@
 
 ApplicationManager* ApplicationManager::sharedInstance = NULL;
 
-void ApplicationManager::initialize(sf::RenderWindow* window)
+
+void ApplicationManager::initialize(sf::RenderWindow* window) 
 {
-    if (sharedInstance == nullptr)
+    if (sharedInstance == nullptr) 
     {
         sharedInstance = new ApplicationManager();
     }
@@ -12,9 +13,9 @@ void ApplicationManager::initialize(sf::RenderWindow* window)
     sharedInstance->window = window;
 }
 
-ApplicationManager* ApplicationManager::getInstance()
+ApplicationManager* ApplicationManager::getInstance() 
 {
-    if (sharedInstance == nullptr)
+    if (sharedInstance == nullptr) 
     {
         sharedInstance = new ApplicationManager();
     }
@@ -23,25 +24,25 @@ ApplicationManager* ApplicationManager::getInstance()
 
 void ApplicationManager::applicationQuit()
 {
-    this->window->close();
+	this->window->close();
 }
 
 void ApplicationManager::pauseApplication()
 {
-    this->state = Paused;
+	this->state = Paused;
 }
 
 void ApplicationManager::resumeApplication()
 {
-    this->state = Running;
+	this->state = Running;
 }
 
 bool ApplicationManager::isPaused()
 {
-    return this->state == Paused;
+	return this->state == Paused;
 }
 
 ApplicationManager::~ApplicationManager()
 {
-    delete this->window;
+	delete this->window;
 }

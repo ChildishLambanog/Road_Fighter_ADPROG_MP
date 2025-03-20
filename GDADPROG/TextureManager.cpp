@@ -1,12 +1,24 @@
-#include "TextureManager.h"
-#include <iostream>
 #include <stddef.h>
+#include <iostream>
+#include "TextureManager.h"
 
 TextureManager* TextureManager::sharedInstance = NULL;
 
-void TextureManager::loadAll() //implement later
+void TextureManager::loadAll()
 {
-	
+	loadTexture("desert_bg", "Media/Textures/Desert.png");
+	sf::Texture* bgTex;
+	bgTex = getTexture("desert_bg");
+	bgTex->setRepeated(true);
+	loadTexture("Eagle", "Media/Textures/Eagle.png");
+	loadTexture("Raptor", "Media/Textures/Raptor.png");
+	loadTexture("Raptor", "Media/Textures/Raptor.png");
+	loadTexture("Avenger", "Media/Textures/Avenger.png");
+	loadTexture("title_bg", "Media/Textures/f.png");
+	loadTexture("btn_normal", "Media/Textures/b_4.png");
+	loadTexture("btn_pressed", "Media/Textures/b_5.png");
+	loadTexture("bar_1", "Media/Textures/bar_1.png");
+	loadTexture("title_screen", "Media/UI/TitleScreenBG.png");
 }
 
 void TextureManager::loadTexture(std::string key, std::string path)
@@ -26,19 +38,19 @@ sf::Texture* TextureManager::getTexture(std::string key)
 	else
 	{
 		std::cout << "No texture found for " << key << std::endl;
-		return nullptr;
+		return nullptr;	
 	}
 }
 
-TextureManager* TextureManager::getInstance()
+TextureManager* TextureManager::getInstance() 
 {
-	if (sharedInstance == NULL)
+	if (sharedInstance == NULL) 
 	{
 		sharedInstance = new TextureManager();
 	}
 
 	return sharedInstance;
-}
+}; 
 
 void TextureManager::testFunction()
 {

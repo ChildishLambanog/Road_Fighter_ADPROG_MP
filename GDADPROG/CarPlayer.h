@@ -1,7 +1,8 @@
 #pragma once
 #include "AbstractGameObject.h"
 
-class CarPlayer : public AGameObject {
+class CarPlayer : public AGameObject
+{
 public:
 	CarPlayer(std::string name);
 	void initialize();
@@ -13,6 +14,4 @@ private:
 	bool moveDown = false;
 	bool moveLeft = false;
 	bool moveRight = false;
-
 };
-

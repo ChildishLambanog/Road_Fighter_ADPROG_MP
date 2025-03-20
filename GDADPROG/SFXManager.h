@@ -19,4 +19,3 @@ private:
 	void loadSound(std::string, std::string);
 	std::unordered_map<std::string, sf::SoundBuffer*> soundMap;
 };
-

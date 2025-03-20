@@ -9,6 +9,7 @@ public:
 	void pauseApplication();
 	void resumeApplication();
 	bool isPaused();
+	bool isResumed();
 
 	enum GameState { Running = 0, Paused = 1 };
 
@@ -22,4 +23,3 @@ private:
 	sf::RenderWindow* window;
 	GameState state;
 };
-
