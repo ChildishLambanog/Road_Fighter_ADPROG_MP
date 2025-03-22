@@ -28,6 +28,7 @@ public:
 	void setEnabled(bool flag);
 	bool isEnabled();
 	AGameObject* getParent();
+	sf::Transform getGlobalTransform();
 
 
 protected:

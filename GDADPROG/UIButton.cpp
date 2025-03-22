@@ -47,25 +47,6 @@ sf::FloatRect UIButton::getLocalBounds()
 sf::FloatRect UIButton::getGlobalBounds()
 {
 	sf::FloatRect bounds = this->sprite->getGlobalBounds();
-
-	AGameObject* parentObj = this;
-	std::vector<AGameObject*> parentList;
-
-	while (parentObj != nullptr)
-	{
-		parentList.push_back(parentObj);
-		parentObj = parentObj->getParent();
-	}
-
-	sf::Transform transform = sf::Transform::Identity;
-	int startIdx = parentList.size() - 1;
-
-	for (int i = startIdx; i >= 0; i--)
-	{
-		transform = transform * parentList[i]->getTransformable().getTransform();
-	}
-
-	bounds = transform.transformRect(bounds);
-
+	bounds = this->getGlobalTransform().transformRect(bounds);
 	return bounds;
 }

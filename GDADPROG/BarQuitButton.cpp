@@ -20,7 +20,7 @@ void BarQuitButton::initialize()
 	//sf::Vector2u textureSize = sprite->getTexture()->getSize();
 	//sprite->setOrigin(textureSize.x / 2, textureSize.y / 2);
 
-	//Renderer* renderer = new Renderer("bar_1");
+	//Renderer* renderer = new Renderer("bar_1");                                      commented this out if we won't be using the bar
 	//renderer->assignDrawable(sprite);
 	//this->attachComponent(renderer);
 
