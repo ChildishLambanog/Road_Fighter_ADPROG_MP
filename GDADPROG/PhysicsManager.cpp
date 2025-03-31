@@ -45,3 +45,19 @@ void PhysicsManager::perform()
 	}
 	this->cleanUpObjects();
 }
+
+void  PhysicsManager::cleanUpObjects()
+{
+	for (int i = 0;i < this->forCleaningObjects.size();i++)
+	{
+		for (int j = 0; j < this->trackedObjects.size();j++)
+		{
+			if (this->trackedObjects[j] == this->forCleaningObjects[i])
+			{
+				this->trackedObjects.erase(this->trackedObjects.begin() + j);
+				break;
+			}
+		}
+	}
+	this->forCleaningObjects.clear();
+}
