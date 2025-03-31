@@ -17,13 +17,18 @@ public:
 
 	void attachComponent(AbstractComponent* component);
 	void detachComponent(AbstractComponent* component);
+	
 	AbstractComponent* findComponentByName(std::string name);
 	AbstractComponent* findComponentOfType(AbstractComponent::ComponentType type, std::string name);
+	
 	std::vector<AbstractComponent*> getComponentOfType(AbstractComponent::ComponentType type);
 	std::vector<AbstractComponent*> getComponentsOfTypeRecursive(AbstractComponent::ComponentType type);
+	
 	void attachChild(AGameObject* child);
 	void detachChild(AGameObject* child);
+	
 	void setPosition(float x, float y);
+	
 	sf::Transformable& getTransformable();
 	void setEnabled(bool flag);
 	bool isEnabled();

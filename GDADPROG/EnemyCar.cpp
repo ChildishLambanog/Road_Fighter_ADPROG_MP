@@ -3,8 +3,11 @@
 #include "Game.h"
 #include "Renderer.h"
 #include "EnemyBehaviour.h"
+#include "GameObjectPool.h"
+#include "ObjectPoolHolder.h"
+#include "PhysicsManager.h"
 
-EnemyCar::EnemyCar(std::string name) : AbstractPoolable(name)
+EnemyCar::EnemyCar(std::string name) : AbstractPoolable(name),CollisionListener()
 {
 }
 
@@ -31,16 +34,26 @@ void EnemyCar::initialize()
 	EnemyBehaviour* behaviour = new EnemyBehaviour("EnemyBehaviour");
 	this->attachComponent(behaviour);
 	behaviour->configure(1.0f);
+
+	this->collider = new Collider("EnemyCollider");
+	this->collider->setLocalBounds(sprite->getLocalBounds());
+	this->collider->setCollisionListener(this);
+	this->attachComponent(this->collider);
+
+
 }
 
 void EnemyCar::onRelease()
 {
+	PhysicsManager::getInstance()->untrackObject(this->collider);
 }
 
 void EnemyCar::onActivate()
 {
 	EnemyBehaviour* behaviour = (EnemyBehaviour*)this->findComponentByName("EnemyBehaviour");
 	behaviour->reset();
+
+	PhysicsManager::getInstance()->trackObject(this->collider);
 
 	this->setPosition(Game::WINDOW_WIDTH / 2, -30);
 	this->getTransformable().move(rand() % SPAWN_RANGE - rand() % SPAWN_RANGE, 0);
@@ -50,4 +63,20 @@ AbstractPoolable* EnemyCar::clone()
 {
 	AbstractPoolable* copyObj = new EnemyCar(this->name);
 	return copyObj;
+}
+
+void EnemyCar::onCollisionEnter(AGameObject* contact)
+{
+	if (contact->getName().find("CarObject"))
+	{
+		GameObjectPool* enemyPool = ObjectPoolHolder::getInstance()->getPool(ObjectPoolHolder::ENEMY_POOL_TAG);
+		enemyPool->releasePoolable((AbstractPoolable*)this);
+	}
+
+}
+
+
+void EnemyCar::onCollisionExit(AGameObject* contact)
+{
+	std::cout << "no";
 }
