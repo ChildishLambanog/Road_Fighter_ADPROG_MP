@@ -16,7 +16,7 @@ PhysicsManager* PhysicsManager::getInstance()
 
 void PhysicsManager::trackObject(Collider* object)
 {
-	object->setAlreadyCollided(false);
+//	object->setAlreadyCollided(false);
 	this->trackedObjects.push_back(object);
 }
 
@@ -29,7 +29,7 @@ void PhysicsManager::perform()
 {
 	for (int i = 0; i < this->trackedObjects.size(); i++)
 	{
-		for (int j = 0; j < this->trackedObjects.size(); j++)
+		for (int j = i+1; j < this->trackedObjects.size(); j++)
 		{
 			if (this->trackedObjects[i] != this->trackedObjects[j] &&
 				this->trackedObjects[i]->getOwner()->isEnabled() &&
@@ -37,12 +37,38 @@ void PhysicsManager::perform()
 			{
 				if (this->trackedObjects[i]->willCollide(this->trackedObjects[j]))
 				{
-					this->trackedObjects[i]->collisionEnter(this->trackedObjects[j]->getOwner());
-					this->trackedObjects[j]->collisionEnter(this->trackedObjects[i]->getOwner());
+					if (!this->trackedObjects[i]->hasCollisionWith(this->trackedObjects[j]))
+					{
+						this->trackedObjects[i]->addCollision(this->trackedObjects[j]);
+						this->trackedObjects[i]->collisionEnter(this->trackedObjects[j]->getOwner());
+						
+
+					}
+					if (!this->trackedObjects[j]->hasCollisionWith(this->trackedObjects[i]))
+					{
+						this->trackedObjects[j]->addCollision(this->trackedObjects[i]);
+						this->trackedObjects[j]->collisionEnter(this->trackedObjects[i]->getOwner());
+
+					}
 				}
+				else
+				{
+					if (this->trackedObjects[i]->hasCollisionWith(this->trackedObjects[j]))
+					{
+						this->trackedObjects[i]->collisionExit(this->trackedObjects[j]->getOwner());
+						this->trackedObjects[i]->removeCollision(this->trackedObjects[j]);
+					}
+					if (this->trackedObjects[j]->hasCollisionWith(this->trackedObjects[i]))
+					{
+						this->trackedObjects[j]->collisionExit(this->trackedObjects[i]->getOwner());
+						this->trackedObjects[j]->removeCollision(this->trackedObjects[i]);
+					}
+				}
+
 			}
 		}
 	}
+
 	this->cleanUpObjects();
 }
 
@@ -55,7 +81,6 @@ void  PhysicsManager::cleanUpObjects()
 			if (this->trackedObjects[j] == this->forCleaningObjects[i])
 			{
 				this->trackedObjects.erase(this->trackedObjects.begin() + j);
-				break;
 			}
 		}
 	}

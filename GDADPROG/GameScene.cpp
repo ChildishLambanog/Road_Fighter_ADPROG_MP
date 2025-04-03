@@ -15,6 +15,8 @@
 #include "BarQuitButton.h"
 #include "TitleScreenExit.h"
 #include <iostream>
+#include "PhysicsManager.h"
+
 
 GameScene::GameScene() : AbstractScene("GameScene")
 {
@@ -37,9 +39,11 @@ void GameScene::onLoadObjects()
 
 	srand(time(nullptr));
 	EmptyGameObject* enemiesManager = new EmptyGameObject("EnemiesManager");
-	EnemySwarmHandler* swarmHandler = new EnemySwarmHandler(200, "SwarmHandler", enemiesManager);
+	EnemySwarmHandler* swarmHandler = new EnemySwarmHandler(7, "SwarmHandler", enemiesManager);
 	enemiesManager->attachComponent(swarmHandler);
 	GameObjectManager::getInstance()->addObject(enemiesManager);
+
+
 
 	MainMenuScreen* mainMenu = new MainMenuScreen("MainMenuScreen");
 	GameObjectManager::getInstance()->addObject(mainMenu);
