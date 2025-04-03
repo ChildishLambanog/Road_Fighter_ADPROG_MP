@@ -25,27 +25,27 @@ void PlayerMovement::perform()
 	{
 		offset.y -= this->SPEED_MULTIPLIER;
 		playerTransformable.move(offset * deltaTime.asSeconds());
-		std::cout << "Moving Up" << std::endl;
+		//std::cout << "Moving Up" << std::endl;
 	}
 
 	else if (inputController->isDown())
 	{
 		offset.y += this->SPEED_MULTIPLIER;
 		playerTransformable.move(offset * deltaTime.asSeconds());
-		std::cout << "Moving Down" << std::endl;
+		//std::cout << "Moving Down" << std::endl;
 	}
 
 	else if (inputController->isRight())
 	{
 		offset.x += this->SPEED_MULTIPLIER;
 		playerTransformable.move(offset * deltaTime.asSeconds());
-		std::cout << "Moving Right" << std::endl;
+	//	std::cout << "Moving Right" << std::endl;
 	}
 
 	else if (inputController->isLeft())
 	{
 		offset.x -= this->SPEED_MULTIPLIER;
 		playerTransformable.move(offset * deltaTime.asSeconds());
-		std::cout << "Moving Left" << std::endl;
+	//	std::cout << "Moving Left" << std::endl;
 	}
 }

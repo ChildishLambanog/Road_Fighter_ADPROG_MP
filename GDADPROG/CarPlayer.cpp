@@ -32,7 +32,22 @@ void CarPlayer::initialize()
 
 	Renderer* renderer = new Renderer("PlayerSprite");
 	renderer->assignDrawable(sprite);
+
 	this->attachComponent(renderer);
+
+
+	this->collider = new Collider("playerCollider");
+	this->collider->setLocalBounds(sprite->getLocalBounds());
+	this->collider->setCollisionListener(this);
+	this->attachComponent(this->collider);
+	PhysicsManager::getInstance()->initialize("physManger", this);
+
+	PhysicsManager::getInstance()->trackObject(this->collider);
+
+	
+
+
+
 }
 
 void CarPlayer::processInput(sf::Event event)
@@ -43,4 +58,15 @@ void CarPlayer::processInput(sf::Event event)
 void CarPlayer::update(sf::Time deltaTime)
 {
 	AGameObject::update(deltaTime);
+}
+
+void CarPlayer::onCollisionEnter(AGameObject* contact)
+{
+	std::cout << "collided with " << contact->getName() << std::endl;
+}
+
+void CarPlayer::onCollisionExit(AGameObject* contact)
+{
+	std::cout << "[melr";
+
 }

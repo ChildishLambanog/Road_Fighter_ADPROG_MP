@@ -21,5 +21,6 @@ private:
 	int counter = 0;
 
 	const int SPAWN_RANGE = 300;
+	
 	Collider* collider;
 };

@@ -40,6 +40,8 @@ void EnemyCar::initialize()
 	this->collider->setCollisionListener(this);
 	this->attachComponent(this->collider);
 
+	PhysicsManager::getInstance()->initialize("physManger",this);
+
 
 }
 
@@ -67,8 +69,11 @@ AbstractPoolable* EnemyCar::clone()
 
 void EnemyCar::onCollisionEnter(AGameObject* contact)
 {
-	if (contact->getName().find("CarObject"))
+	//std::cout << "collided with " << contact->getName()<<std::endl;
+	if (contact->getName().find("CarObject")!=std::string::npos)
 	{
+		std::cout << "collided with " << contact->getName();
+		return;
 		GameObjectPool* enemyPool = ObjectPoolHolder::getInstance()->getPool(ObjectPoolHolder::ENEMY_POOL_TAG);
 		enemyPool->releasePoolable((AbstractPoolable*)this);
 	}

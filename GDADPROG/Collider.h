@@ -2,6 +2,7 @@
 #include "AbstractComponent.h"
 #include "CollisionListener.h"
 #include "AbstractGameObject.h"
+#include "unordered_set"
 
 class Collider : public AbstractComponent {
 public:
@@ -9,12 +10,14 @@ public:
 
 	void setCollisionListener(CollisionListener* listener);
 	
-	void setChecked(bool flag);
-	bool isChecked();
+	
 
 	bool willCollide(Collider* another);
-	bool alreadyCollided();
-	void setAlreadyCollided(bool flag);
+	bool hasCollisionWith(Collider* collider);
+	void addCollision(Collider* collider);
+	void removeCollision(Collider* collider);
+
+
 
 	sf::FloatRect getGlobalBounds();
 	void setLocalBounds(sf::FloatRect localBounds);
@@ -22,8 +25,9 @@ public:
 	void collisionExit(AGameObject* gameObjects);
 
 	void perform();
+	void clearCollisions();
 private:
-	bool collided = false;
+	std::unordered_set<Collider*>collisions;
 	bool checked = false;
 	sf::FloatRect localBounds;
 	CollisionListener* listener;

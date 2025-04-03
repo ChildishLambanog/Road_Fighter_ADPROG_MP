@@ -13,14 +13,32 @@ void Collider::setCollisionListener(CollisionListener* listener)
 	this->listener = listener;
 }
 
-void Collider::setChecked(bool flag)
+bool Collider::hasCollisionWith(Collider* collider)
 {
-	this->checked = flag;
+	return this->collisions.find(collider) != this->collisions.end();
 }
 
-bool Collider::isChecked()
+
+void Collider::addCollision(Collider* collider)
 {
-	return this->checked;
+	this->collisions.insert(collider);
+}
+
+void Collider::removeCollision(Collider* collider)
+{
+
+	this->collisions.erase(collider);
+}
+
+void Collider::clearCollisions()
+{
+	for (Collider* collider : this->collisions)
+	{
+		collider->collisionExit(this->getOwner());
+		this->collisionExit(collider->getOwner());
+		collider->removeCollision(this);
+	}
+	collisions.clear();
 }
 
 bool Collider::willCollide(Collider* another)
@@ -29,16 +47,6 @@ bool Collider::willCollide(Collider* another)
 	sf::FloatRect B = another->getGlobalBounds();
 
 	return A.intersects(B);
-}
-
-bool Collider::alreadyCollided()
-{
-	return this->collided;
-}
-
-void Collider::setAlreadyCollided(bool flag)
-{
-	this->collided = flag;
 }
 
 void Collider::setLocalBounds(sf::FloatRect localBounds)
