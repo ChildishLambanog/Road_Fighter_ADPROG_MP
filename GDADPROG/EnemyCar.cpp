@@ -23,9 +23,9 @@ void EnemyCar::initialize()
 	sf::Vector2u textureSize = sprite->getTexture()->getSize();
 	sprite->setOrigin(textureSize.x / 2, textureSize.y / 2);
 
-	this->setPosition(Game::WINDOW_WIDTH / 2, -30);
+	this->setPosition(Game::WINDOW_WIDTH / 2, -30); 
 	this->getTransformable().move(rand() % SPAWN_RANGE - rand() % SPAWN_RANGE, 0);
-	this->getTransformable().setRotation(180);
+	this->getTransformable().setRotation(0); //180 front 90 side 0 back
 
 	Renderer* renderer = new Renderer("EnemySprite");
 	renderer->assignDrawable(sprite);
@@ -57,7 +57,7 @@ void EnemyCar::onActivate()
 
 	PhysicsManager::getInstance()->trackObject(this->collider);
 
-	this->setPosition(Game::WINDOW_WIDTH / 2, -30);
+	this->setPosition(Game::WINDOW_WIDTH / 2, -20); //-30
 	this->getTransformable().move(rand() % SPAWN_RANGE - rand() % SPAWN_RANGE, 0);
 }
 
@@ -80,8 +80,7 @@ void EnemyCar::onCollisionEnter(AGameObject* contact)
 
 }
 
-
 void EnemyCar::onCollisionExit(AGameObject* contact)
 {
-	std::cout << "no";
+	std::cout << "no1";
 }

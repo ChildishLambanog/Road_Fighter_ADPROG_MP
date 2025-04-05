@@ -9,6 +9,6 @@ public:
 	void perform();
 private:
 	GameObjectPool* enemyPool;
-	const float SPAWN_INTERVAL = 0.01f;
-	float ticks = 0.0f;
+	const float SPAWN_INTERVAL = 0.4f; //0.01f 1.0f 0.7
+	float ticks = 5.5f; //0.0f 5.5f
 };

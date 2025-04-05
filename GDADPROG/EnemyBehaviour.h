@@ -10,8 +10,9 @@ public:
 	void configure(float delay);
 	void reset();
 
-private: 
-	const float SPEED_MULTIPLIER = 100.0f;
+private:
+	void isItOutOfBounds();
+	const float SPEED_MULTIPLIER = 500.0f; //100.0f
 	EnemyBehaviour::EnemyMovementType movementType = Forward;
 	float tick = 0.0f;
 	float delay = 0.0f;

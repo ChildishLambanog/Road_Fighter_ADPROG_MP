@@ -6,14 +6,14 @@ TextureManager* TextureManager::sharedInstance = NULL;
 
 void TextureManager::loadAll()
 {
-	loadTexture("desert_bg", "Media/Textures/Desert.png");
+	loadTexture("desert_bg", "Media/Textures/Road_Design.png");
 	sf::Texture* bgTex;
 	bgTex = getTexture("desert_bg");
 	bgTex->setRepeated(true);
-	loadTexture("Eagle", "Media/Textures/Eagle.png");
-	loadTexture("Raptor", "Media/Textures/Raptor.png");
-	loadTexture("Raptor", "Media/Textures/Raptor.png");
-	loadTexture("Avenger", "Media/Textures/Avenger.png");
+	loadTexture("Eagle", "Media/Textures/Player_Car.png"); //Player
+	//loadTexture("Raptor", "Media/Textures/Raptor.png");
+	//loadTexture("Raptor", "Media/Textures/Raptor.png");
+	loadTexture("Avenger", "Media/Textures/Enemy_Car1.png"); //Enemy Car 1
 	loadTexture("title_bg", "Media/Textures/f.png");
 	loadTexture("btn_normal", "Media/Textures/b_4.png");
 	loadTexture("btn_pressed", "Media/Textures/b_5.png");

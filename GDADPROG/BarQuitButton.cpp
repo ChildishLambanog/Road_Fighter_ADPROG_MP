@@ -15,24 +15,12 @@ BarQuitButton::BarQuitButton(std::string name) : AGameObject(name), ButtonListen
 
 void BarQuitButton::initialize()
 {
-	//sf::Sprite* sprite = new sf::Sprite();
-	//sprite->setTexture(*TextureManager::getInstance()->getTexture("bar_1"));
-	//sf::Vector2u textureSize = sprite->getTexture()->getSize();
-	//sprite->setOrigin(textureSize.x / 2, textureSize.y / 2);
-
-	//Renderer* renderer = new Renderer("bar_1");                                      commented this out if we won't be using the bar
-	//renderer->assignDrawable(sprite);
-	//this->attachComponent(renderer);
-
-	//this->setPosition(485, 660);
-	//this->transformable.setScale(1.10f, 1.10f);
-
 	sf::Texture* btnNormal = TextureManager::getInstance()->getTexture("btn_normal");
 	sf::Texture* btnPressed = TextureManager::getInstance()->getTexture("btn_pressed");
 
 	UIButton* quitButton = new UIButton("quit_btn", btnNormal, btnPressed);
 	this->attachChild(quitButton);
-	quitButton->setPosition(860, 670);
+	quitButton->setPosition(110, 670);
 	quitButton->getTransformable().setScale(0.235f, 0.235f);
 	quitButton->setButtonListener(this);
 
