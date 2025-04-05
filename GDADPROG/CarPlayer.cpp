@@ -6,9 +6,8 @@
 #include "Game.h"
 #include "Renderer.h"
 
-CarPlayer::CarPlayer(std::string name) : AGameObject(name)
+CarPlayer::CarPlayer(std::string name) : AGameObject(name), CollisionListener(), collider(nullptr)
 {
-
 }
 
 void CarPlayer::initialize()
@@ -19,7 +18,7 @@ void CarPlayer::initialize()
 	this->sprite->setTexture(*TextureManager::getInstance()->getTexture("Eagle"));
 	sf::Vector2u textureSize = sprite->getTexture()->getSize();
 	this->sprite->setOrigin(textureSize.x / 2, textureSize.y / 2);
-	this->transformable.setPosition(Game::WINDOW_WIDTH / 2, Game::WINDOW_HEIGHT / 2);
+	this->transformable.setPosition(500, 650); //Game::WINDOW_WIDTH / 2, Game::WINDOW_HEIGHT / 2
 
 	PlayerInputController* inputController = new PlayerInputController("MyPlayerInput");
 	this->attachComponent(inputController);
@@ -32,21 +31,17 @@ void CarPlayer::initialize()
 
 	Renderer* renderer = new Renderer("PlayerSprite");
 	renderer->assignDrawable(sprite);
-
 	this->attachComponent(renderer);
 
+	/*sf::FloatRect globalBounds = sprite->getGlobalBounds();*/ //test later
 
 	this->collider = new Collider("playerCollider");
 	this->collider->setLocalBounds(sprite->getLocalBounds());
 	this->collider->setCollisionListener(this);
 	this->attachComponent(this->collider);
+
 	PhysicsManager::getInstance()->initialize("physManger", this);
-
 	PhysicsManager::getInstance()->trackObject(this->collider);
-
-	
-
-
 
 }
 

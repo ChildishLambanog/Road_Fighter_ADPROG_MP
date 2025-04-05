@@ -18,5 +18,5 @@ public:
 	sf::Sprite* sprite;
 
 private:
-	const float SPEED_MULTIPLIER = 100.f;
+	const float SPEED_MULTIPLIER = 100.f; //100.0f
 };

@@ -7,5 +7,5 @@ public:
 	void perform();
 
 private:
-	float SPEED_MULTIPLIER = 100.0f;
+	float SPEED_MULTIPLIER = 400.0f; //100.0f
 };

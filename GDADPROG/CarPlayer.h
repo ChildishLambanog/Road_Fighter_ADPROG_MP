@@ -14,6 +14,10 @@ public:
 	void update(sf::Time deltaTime);
 	void onCollisionEnter(AGameObject* contact);
 	void onCollisionExit(AGameObject* contact);
+
+	//sf::Transformable& getTransformable();
+	//sf::Drawable* getSprite();
+
 private:
 	const float SPEED_MULTIPLIER = 300.0f;
 	bool moveUp = false;

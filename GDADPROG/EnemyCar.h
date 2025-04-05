@@ -22,7 +22,7 @@ private:
 	sf::Sprite* sprite = new sf::Sprite();
 	int counter = 0;
 
-	const int SPAWN_RANGE = 250; //300
+	const int SPAWN_RANGE = 260; //300
 	
 	Collider* collider;
 };
