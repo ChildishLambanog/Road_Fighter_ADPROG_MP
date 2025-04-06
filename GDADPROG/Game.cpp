@@ -21,6 +21,7 @@
 
 #include "ScoreManager.h"
 #include <iostream>
+#include "ApplicationManager.h"
 
 
 Game::Game() : mWindow(sf::VideoMode(Game::WINDOW_WIDTH, Game::WINDOW_HEIGHT), "Rameses Amar & Ira Villanueva"), mSampleEntity()
@@ -45,6 +46,9 @@ Game::Game() : mWindow(sf::VideoMode(Game::WINDOW_WIDTH, Game::WINDOW_HEIGHT), "
 	deadText.setCharacterSize(35);
 	deadText.setFillColor(sf::Color::Red);
 	deadText.setPosition(20, 280);
+
+	mSFX.setBuffer(*SFXManager::getInstance()->getSound("score"));
+	mSFX.setVolume(10.f);
 
 }
 
@@ -95,10 +99,10 @@ void Game::run()
 		if (elapsedTime.asSeconds() >= 1.f && SceneManager::getInstance()->getActiveScene() == SceneManager::GAME_SCENE_NAME)
 		{
 			
-			if (!ScoreManager::getInstance()->getFlag())
-			{					SFXManager::getInstance()->playSound("boom");
+			if (!ScoreManager::getInstance()->getFlag()&&!ApplicationManager::getInstance()->isPaused()){
 
 				ScoreManager::getInstance()->addScore();
+				mSFX.play();
 				scoreText.setString("Score: " + std::to_string(ScoreManager::getInstance()->getScore()));
 				elapsedTime = sf::Time::Zero; // Reset elapsed time
 				deadText.setString("Deaths: " + std::to_string(ScoreManager::getInstance()->getDeaths()));
@@ -149,7 +153,7 @@ void Game::processEvents()
 			case sf::Event::KeyReleased:
 				if (event.key.code == sf::Keyboard::Space)
 				{
-					std::cout << "wah";
+					
 				}
 				break;
 		}

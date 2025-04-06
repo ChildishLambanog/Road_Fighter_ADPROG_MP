@@ -3,6 +3,7 @@
 #include "PhysicsManager.h"
 #include "Collider.h"
 #include "CollisionListener.h"
+#include "SFML/Audio.hpp"
 
 
 class CarPlayer : public AGameObject,public CollisionListener
@@ -18,6 +19,8 @@ public:
 	//sf::Transformable& getTransformable();
 	//sf::Drawable* getSprite();
 	Collider* collider;
+
+	sf::Sound cFX;
 	int health = 3;	
 
 private:

@@ -8,7 +8,7 @@
 #include "Game.h"
 #include "Renderer.h"
 #include "SFXManager.h"
-#include "SFML/Audio.hpp"
+
 #include "ScoreManager.h"
 
 CarPlayer::CarPlayer(std::string name) : AGameObject(name), CollisionListener()
@@ -44,7 +44,8 @@ void CarPlayer::initialize()
 
 	PhysicsManager::getInstance()->initialize("physManger", this);
 	PhysicsManager::getInstance()->trackObject(this->collider);
-
+	this->cFX.setBuffer(*SFXManager::getInstance()->getSound("boom"));
+	this->cFX.setVolume(10.f);
 }
 
 void CarPlayer::processInput(sf::Event event)
@@ -59,9 +60,10 @@ void CarPlayer::update(sf::Time deltaTime)
 
 void CarPlayer::onCollisionEnter(AGameObject* contact)
 {
-	SFXManager::getInstance()->playSound("boom");
+	
 	if (contact->getName().find("enemy") != std::string::npos)
 	{
+		cFX.play();
 
 		if (health > 1)
 		{
