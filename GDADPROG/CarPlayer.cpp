@@ -9,6 +9,7 @@
 #include "Renderer.h"
 #include "SFXManager.h"
 #include "SFML/Audio.hpp"
+#include "ScoreManager.h"
 
 CarPlayer::CarPlayer(std::string name) : AGameObject(name), CollisionListener()
 {}
@@ -58,25 +59,28 @@ void CarPlayer::update(sf::Time deltaTime)
 
 void CarPlayer::onCollisionEnter(AGameObject* contact)
 {
-
+	SFXManager::getInstance()->playSound("boom");
 	if (contact->getName().find("enemy") != std::string::npos)
 	{
+
 		if (health > 1)
 		{
+			ScoreManager::getInstance()->addDeath();
+
 			std::cout << "collided with " << contact->getName() << std::endl;
 			health -= 1;
 			int healthShown = health;
 			std::cout << "Health Remaining: " << healthShown << std::endl;
 			this->transformable.setPosition(500, 650); //original spawn (500, 650)
-			sf::Sound pSound;
-			pSound.setBuffer(*SFXManager::getInstance()->getSound("boom"));
-			pSound.play();
+			
 		}
 
 		else if (health == 1)
 		{
 			std::cout << "Game Over" << std::endl;
+			ScoreManager::getInstance()->addDeath();
 			AGameObject* flag = GameObjectManager::getInstance()->findObjectByName("GameOverScreen");
+			ScoreManager::getInstance()->setFlag(true);
 			flag->setEnabled(true);
 			ApplicationManager* UIManager = ApplicationManager::getInstance();
 			UIManager->pauseApplication();

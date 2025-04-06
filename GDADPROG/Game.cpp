@@ -16,7 +16,10 @@
 #include "TitleMenuScreen.h"
 #include "GameScene.h"
 #include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
 #include "SFXManager.h"
+
+#include "ScoreManager.h"
 #include <iostream>
 
 
@@ -31,6 +34,18 @@ Game::Game() : mWindow(sf::VideoMode(Game::WINDOW_WIDTH, Game::WINDOW_HEIGHT), "
 
 	TitleMenuScreen* titleMenu = new TitleMenuScreen("TitleMenuScreen");
 	GameObjectManager::getInstance()->addObject(titleMenu);
+	font = FontManager::getInstance()->getFont("default");
+
+	scoreText.setFont(*font);
+	scoreText.setCharacterSize(35);
+	scoreText.setFillColor(sf::Color::Green);
+	scoreText.setPosition(20, 250);
+
+	deadText.setFont(*font);
+	deadText.setCharacterSize(35);
+	deadText.setFillColor(sf::Color::Red);
+	deadText.setPosition(20, 280);
+
 }
 
 void Game::addEntity(std::string key, float x, float y)
@@ -77,6 +92,26 @@ void Game::run()
 		deltaTime = clock.restart();
 		timeSinceLastUpdate += deltaTime;
 		elapsedTime += deltaTime;
+		if (elapsedTime.asSeconds() >= 1.f && SceneManager::getInstance()->getActiveScene() == SceneManager::GAME_SCENE_NAME)
+		{
+			
+			if (!ScoreManager::getInstance()->getFlag())
+			{					SFXManager::getInstance()->playSound("boom");
+
+				ScoreManager::getInstance()->addScore();
+				scoreText.setString("Score: " + std::to_string(ScoreManager::getInstance()->getScore()));
+				elapsedTime = sf::Time::Zero; // Reset elapsed time
+				deadText.setString("Deaths: " + std::to_string(ScoreManager::getInstance()->getDeaths()));
+			}
+		}
+		else if (elapsedTime.asSeconds() >= 1.f&&SceneManager::getInstance()->getActiveScene() == SceneManager::MAIN_MENU_SCENE_NAME)
+		{
+			ScoreManager::getInstance()->reset();
+			scoreText.setString("");
+			deadText.setString("");
+			
+
+		}
 
 		while (timeSinceLastUpdate > TimePerFrame)
 		{
@@ -94,6 +129,9 @@ void Game::render()
 {
 	mWindow.clear();
 	GameObjectManager::getInstance()->draw(&mWindow);
+	mWindow.draw(scoreText);
+	mWindow.draw(deadText);
+	
 	mWindow.display();
 }
 
@@ -111,7 +149,7 @@ void Game::processEvents()
 			case sf::Event::KeyReleased:
 				if (event.key.code == sf::Keyboard::Space)
 				{
-					GameObjectManager::getInstance()->addObject(new EnemyCar("EnemyCar"));
+					std::cout << "wah";
 				}
 				break;
 		}

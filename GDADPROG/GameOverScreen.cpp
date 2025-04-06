@@ -12,7 +12,7 @@
 #include "TitleScreenExit.h"
 #include <iostream>
 #include <string>
-
+#include "ScoreManager.h"
 GameOverScreen::GameOverScreen(std::string name) : AGameObject(name), ButtonListener()
 {
 }
@@ -27,11 +27,13 @@ void GameOverScreen::initialize()
 	Renderer* renderer = new Renderer("GameOver_Screen");
 	renderer->assignDrawable(sprite);
 	this->attachComponent(renderer);
+	
 
 	float posX = Game::WINDOW_WIDTH / 2;
 	float posY = Game::WINDOW_HEIGHT / 2;
 	this->setPosition(Game::WINDOW_WIDTH / 2, Game::WINDOW_HEIGHT / 2);
 	this->transformable.setScale(sf::Vector2f(0.925f, 0.925f));
+
 
 	sf::Texture* btnNormal = TextureManager::getInstance()->getTexture("btn_normal");
 	sf::Texture* btnPressed = TextureManager::getInstance()->getTexture("btn_pressed");
@@ -41,6 +43,8 @@ void GameOverScreen::initialize()
 	playButton->setPosition(-320, 315);
 	playButton->getTransformable().setScale(0.35f, 0.35f);
 	playButton->setButtonListener(this);
+	
+	
 
 	UIText* playButtonText = new UIText("text_play");
 	playButton->attachChild(playButtonText);
@@ -62,8 +66,10 @@ void GameOverScreen::initialize()
 
 	SceneManager::getInstance()->registerScene(new MainMenuScene());
 	SceneManager::getInstance()->loadScene(SceneManager::MAIN_MENU_SCENE_NAME);
+
 }
 
+	
 void GameOverScreen::onButtonClicked(UIButton* button)
 {
 	std::cout << button->getName();
@@ -81,6 +87,7 @@ void GameOverScreen::onButtonReleased(UIButton* button)
 	{
 		GameObjectManager::getInstance()->deleteAllObjectsInScene();
 		sceneManager->unloadScene();
+		ScoreManager::getInstance()->reset();
 		sceneManager->loadScene(SceneManager::MAIN_MENU_SCENE_NAME);
 	}
 
@@ -90,3 +97,4 @@ void GameOverScreen::onButtonReleased(UIButton* button)
 	}
 
 }
+

@@ -151,6 +151,7 @@
     <ClCompile Include="EnemyBehaviour.cpp" />
     <ClCompile Include="EnemySwarmHandler.cpp" />
     <ClCompile Include="Entity.cpp" />
+    <ClCompile Include="FInalScore.cpp" />
     <ClCompile Include="FontManager.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameObjectManager.cpp" />
@@ -168,6 +169,7 @@
     <ClCompile Include="Renderer.cpp" />
     <ClCompile Include="Road.cpp" />
     <ClCompile Include="SceneManager.cpp" />
+    <ClCompile Include="ScoreManager.cpp" />
     <ClCompile Include="SFXManager.cpp" />
     <ClCompile Include="TextureManager.cpp" />
     <ClCompile Include="TitleMenuScreen.cpp" />
@@ -194,6 +196,7 @@
     <ClInclude Include="EnemyBehaviour.h" />
     <ClInclude Include="EnemySwarmHandler.h" />
     <ClInclude Include="Entity.h" />
+    <ClInclude Include="FInalScore.h" />
     <ClInclude Include="FontManager.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameObjectManager.h" />
@@ -210,6 +213,7 @@
     <ClInclude Include="Renderer.h" />
     <ClInclude Include="Road.h" />
     <ClInclude Include="SceneManager.h" />
+    <ClInclude Include="ScoreManager.h" />
     <ClInclude Include="SFXManager.h" />
     <ClInclude Include="TextureManager.h" />
     <ClInclude Include="TitleMenuScreen.h" />

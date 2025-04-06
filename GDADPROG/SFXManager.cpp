@@ -6,7 +6,7 @@ SFXManager* SFXManager::sharedInstance = NULL;
 
 void SFXManager::loadAll()
 {	
-	loadSound("boom", "Media/SFX/explosion_sfx.WAV");
+	loadSound("boom", "Media/SFX/Explosion2.wav");
 	loadSound("score", "Media/SFX/UI_SFX.wav");
 }
 
@@ -29,6 +29,14 @@ sf::SoundBuffer* SFXManager::getSound(std::string key)
 		std::cout << "No sound found for" << key << std::endl;
 		return nullptr;
 	}
+}
+
+void SFXManager::playSound(std::string key)
+{
+	sf::Sound sound;
+	sound.setBuffer(*soundMap[key]);
+	sound.play();
+	std::cout << "Playing sound: " << key << std::endl;
 }
 
 SFXManager* SFXManager::getInstance()

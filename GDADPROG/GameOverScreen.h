@@ -10,6 +10,8 @@ public:
 	void onButtonClicked(UIButton* button);
 	void onButtonReleased(UIButton* button);
 	bool quitPressed;
+
+	
 };
 
 

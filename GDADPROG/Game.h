@@ -25,7 +25,12 @@ private:
 	Entity mSampleEntity;
 	sf::Texture mTexture;
 	sf::Sprite mPlayer;
-	sf::Font font;
+	sf::Font* font;
+	sf::Text scoreText;
+
+	sf::Text deadText;
+
+
 	sf::Text textFps;
 	sf::Text textUpdaterPerS;
 	sf::Sound mSFX;
