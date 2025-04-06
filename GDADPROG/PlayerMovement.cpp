@@ -37,15 +37,23 @@ void PlayerMovement::perform()
 
 	else if (inputController->isRight())
 	{
-		offset.x += this->SPEED_MULTIPLIER;
-		playerTransformable.move(offset * deltaTime.asSeconds());
+		if (playerTransformable.getPosition().x < 755)
+		{
+			offset.x += this->SPEED_MULTIPLIER;
+			playerTransformable.move(offset * deltaTime.asSeconds());
+		}
+		/*offset.x += this->SPEED_MULTIPLIER;
+		playerTransformable.move(offset * deltaTime.asSeconds());*/
 	//	std::cout << "Moving Right" << std::endl;
 	}
 
 	else if (inputController->isLeft())
 	{
-		offset.x -= this->SPEED_MULTIPLIER;
-		playerTransformable.move(offset * deltaTime.asSeconds());
+		if (playerTransformable.getPosition().x > 235)
+		{
+			offset.x -= this->SPEED_MULTIPLIER;
+			playerTransformable.move(offset * deltaTime.asSeconds());
+		}
 	//	std::cout << "Moving Left" << std::endl;
 	}
 }

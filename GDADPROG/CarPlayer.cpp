@@ -18,7 +18,7 @@ void CarPlayer::initialize()
 	this->sprite->setTexture(*TextureManager::getInstance()->getTexture("Eagle"));
 	sf::Vector2u textureSize = sprite->getTexture()->getSize();
 	this->sprite->setOrigin(textureSize.x / 2, textureSize.y / 2);
-	this->transformable.setPosition(500, 650); //Game::WINDOW_WIDTH / 2, Game::WINDOW_HEIGHT / 2
+	this->transformable.setPosition(755, 650); //original spawn (500, 650), max left (230,650), max right (755, 650)
 
 	PlayerInputController* inputController = new PlayerInputController("MyPlayerInput");
 	this->attachComponent(inputController);
