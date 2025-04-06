@@ -19,6 +19,9 @@ void TextureManager::loadAll()
 	loadTexture("btn_pressed", "Media/Textures/b_5.png");
 	loadTexture("bar_1", "Media/Textures/bar_1.png");
 	loadTexture("title_screen", "Media/UI/TitleScreenBG.png");
+	loadTexture("game_over", "Media/UI/GameOver.png");
+	loadTexture("skull", "Media/UI/Skull.png");
+
 }
 
 void TextureManager::loadTexture(std::string key, std::string path)

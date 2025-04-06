@@ -16,6 +16,7 @@
 #include "TitleMenuScreen.h"
 #include "GameScene.h"
 #include <SFML/Graphics.hpp>
+#include "SFXManager.h"
 #include <iostream>
 
 
@@ -24,7 +25,7 @@ Game::Game() : mWindow(sf::VideoMode(Game::WINDOW_WIDTH, Game::WINDOW_HEIGHT), "
 	ApplicationManager::getInstance()->initialize(&mWindow);
 	TextureManager::getInstance()->loadAll();
 	FontManager::getInstance()->loadAll();
-
+	SFXManager::getInstance()->loadAll();
 	SceneManager::getInstance()->registerScene(new GameScene());
 
 	TitleMenuScreen* titleMenu = new TitleMenuScreen("TitleMenuScreen");

@@ -9,6 +9,11 @@ public:
 
 	void loadAll();
 	sf::SoundBuffer* getSound(std::string);
+	void playSound(std::string key) {
+		sf::Sound sound;
+		sound.setBuffer(*getSound(key));
+		sound.play();
+	}
 
 private:
 	SFXManager() {};

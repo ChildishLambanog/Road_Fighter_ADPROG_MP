@@ -6,10 +6,9 @@ SFXManager* SFXManager::sharedInstance = NULL;
 
 void SFXManager::loadAll()
 {
-		loadSound("SFX_1", "Media/SFX/EnemyGunfire.wav");
-		loadSound("SFX_2", "Media/SFX/Explosion1.wav");
-		loadSound("SFX_3", "Media/SFX/Explosion2.wav");
-		loadSound("SFX_4", "Media/SFX/LaunchMissile.wav");
+		
+		loadSound("boom", "Media/SFX/explosion_sfx.WAV");
+		loadSound("score", "Media/SFX/UI_SFX.wav");
 	
 }
 

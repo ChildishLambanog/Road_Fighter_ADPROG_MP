@@ -48,8 +48,7 @@ void EnemyCar::initialize()
 void EnemyCar::onRelease()
 {
 	PhysicsManager::getInstance()->untrackObject(this->collider);
-	GameObjectPool* enemyPool = ObjectPoolHolder::getInstance()->getPool(ObjectPoolHolder::ENEMY_POOL_TAG);
-	enemyPool->releasePoolable((AbstractPoolable*)this);
+
 }
 
 void EnemyCar::onActivate()
@@ -75,7 +74,8 @@ void EnemyCar::onCollisionEnter(AGameObject* contact)
 	if (contact->getName().find("CarObject")!=std::string::npos)
 	{
 		std::cout << "collided with " << contact->getName();
-		return;
+		GameObjectPool* enemyPool = ObjectPoolHolder::getInstance()->getPool(ObjectPoolHolder::ENEMY_POOL_TAG);
+		enemyPool->releasePoolable((AbstractPoolable*)this);
 		
 	}
 

@@ -5,6 +5,8 @@
 #include "PlayerMovement.h"
 #include "Game.h"
 #include "Renderer.h"
+#include "SFXManager.h"
+#include "SFML/Audio.hpp"
 
 CarPlayer::CarPlayer(std::string name) : AGameObject(name), CollisionListener()
 {}
@@ -59,8 +61,21 @@ void CarPlayer::onCollisionEnter(AGameObject* contact)
 
 	if (contact->getName().find("enemy") != std::string::npos)
 	{
-		contact->
-		
+		if (health > 0)
+		{
+			std::cout << "collided with " << contact->getName() << std::endl;
+			health--;
+			std::cout << "health: " << health << std::endl;
+			this->transformable.setPosition(755, 650); //original spawn (500, 650), max left (230,650), max right (755, 650)
+
+		}
+		else
+		{
+			std::cout << "Game Over" << std::endl;
+		}
+		sf::Sound pSound;
+		pSound.setBuffer(*SFXManager::getInstance()->getSound("boom"));
+		pSound.play();
 	
 	}
 
@@ -68,6 +83,10 @@ void CarPlayer::onCollisionEnter(AGameObject* contact)
 
 void CarPlayer::onCollisionExit(AGameObject* contact)
 {
-	std::cout << "[melr";
+	
 
+}
+int CarPlayer::getHealth()
+{
+	return health;
 }
