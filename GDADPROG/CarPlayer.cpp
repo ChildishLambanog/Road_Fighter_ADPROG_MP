@@ -6,9 +6,8 @@
 #include "Game.h"
 #include "Renderer.h"
 
-CarPlayer::CarPlayer(std::string name) : AGameObject(name), CollisionListener(), collider(nullptr)
-{
-}
+CarPlayer::CarPlayer(std::string name) : AGameObject(name), CollisionListener()
+{}
 
 void CarPlayer::initialize()
 {
@@ -57,7 +56,14 @@ void CarPlayer::update(sf::Time deltaTime)
 
 void CarPlayer::onCollisionEnter(AGameObject* contact)
 {
-	std::cout << "collided with " << contact->getName() << std::endl;
+
+	if (contact->getName().find("enemy") != std::string::npos)
+	{
+		contact->
+		
+	
+	}
+
 }
 
 void CarPlayer::onCollisionExit(AGameObject* contact)

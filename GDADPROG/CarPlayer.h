@@ -17,6 +17,8 @@ public:
 
 	//sf::Transformable& getTransformable();
 	//sf::Drawable* getSprite();
+	Collider* collider;
+
 
 private:
 	const float SPEED_MULTIPLIER = 300.0f;
@@ -25,5 +27,4 @@ private:
 	bool moveLeft = false;
 	bool moveRight = false;
 	
-	Collider* collider;
 };
