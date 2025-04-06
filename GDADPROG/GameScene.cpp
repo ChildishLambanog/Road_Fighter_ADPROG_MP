@@ -55,6 +55,10 @@ void GameScene::onLoadObjects()
 
 	BarQuitButton* quitButton = new BarQuitButton("BarQuitButton");
 	GameObjectManager::getInstance()->addObject(quitButton);
+
+	PhysicsManager::getInstance()->trackObject(carObject->collider);
+	
+
 }
 
 void GameScene::onUnloadResources()
