@@ -41,9 +41,7 @@ void CarPlayer::initialize()
 	this->collider->setCollisionListener(this);
 	this->attachComponent(this->collider);
 
-	PhysicsManager::getInstance()->initialize("physManger", this);
-	PhysicsManager::getInstance()->trackObject(this->collider);
-
+	
 }
 
 void CarPlayer::processInput(sf::Event event)
@@ -61,14 +59,17 @@ void CarPlayer::onCollisionEnter(AGameObject* contact)
 
 	if (contact->getName().find("enemy") != std::string::npos)
 	{
-		if (health > 0)
+		if (death < 3)
 		{
-			std::cout << "collided with " << contact->getName() << std::endl;
-			health--;
-			std::cout << "health: " << health << std::endl;
-			this->transformable.setPosition(755, 650); //original spawn (500, 650), max left (230,650), max right (755, 650)
-
-		}
+			//std::cout << "collided with " << contact->getName() << std::endl;
+			death++;
+			
+			this->transformable.setPosition(500, 650); //original spawn (500, 650), max left (230,650), max right (755, 650)
+		 // Set the position of the heart sprite
+			
+			
+			std::cout << "health: " << death << std::endl;
+		}	
 		else
 		{
 			std::cout << "Game Over" << std::endl;
@@ -88,5 +89,5 @@ void CarPlayer::onCollisionExit(AGameObject* contact)
 }
 int CarPlayer::getHealth()
 {
-	return health;
+	return death;
 }

@@ -18,7 +18,7 @@
 #include <SFML/Graphics.hpp>
 #include "SFXManager.h"
 #include <iostream>
-
+#include "ScoreManager.h"
 
 Game::Game() : mWindow(sf::VideoMode(Game::WINDOW_WIDTH, Game::WINDOW_HEIGHT), "Rameses Amar & Ira Villanueva"), mSampleEntity()
 {
@@ -27,9 +27,16 @@ Game::Game() : mWindow(sf::VideoMode(Game::WINDOW_WIDTH, Game::WINDOW_HEIGHT), "
 	FontManager::getInstance()->loadAll();
 	SFXManager::getInstance()->loadAll();
 	SceneManager::getInstance()->registerScene(new GameScene());
-
 	TitleMenuScreen* titleMenu = new TitleMenuScreen("TitleMenuScreen");
 	GameObjectManager::getInstance()->addObject(titleMenu);
+
+	font = FontManager::getInstance()->getFont("default");
+
+	scoreText.setFont(*font);
+	scoreText.setCharacterSize(100);
+	scoreText.setFillColor(sf::Color::Green);
+	scoreText.setPosition(250, 200);
+
 }
 
 void Game::addEntity(std::string key, float x, float y)
@@ -76,7 +83,14 @@ void Game::run()
 		deltaTime = clock.restart();
 		timeSinceLastUpdate += deltaTime;
 		elapsedTime += deltaTime;
+        if (elapsedTime.asSeconds() >= 1.f && SceneManager::getInstance()->getActiveScene() == SceneManager::GAME_SCENE_NAME)
+        {
+        ScoreManager::getInstance()->addScore();
+        elapsedTime = sf::Time::Zero; // Reset elapsed time
+		scoreText.setString("Score: " + std::to_string(ScoreManager::getInstance()->getScore()));
 
+        }
+		
 		while (timeSinceLastUpdate > TimePerFrame)
 		{
 			timeSinceLastUpdate -= TimePerFrame;
@@ -92,8 +106,10 @@ void Game::run()
 void Game::render()
 {
 	mWindow.clear();
+
 	GameObjectManager::getInstance()->draw(&mWindow);
-	mWindow.display();
+	mWindow.draw(scoreText);
+		mWindow.display();
 }
 
 void Game::processEvents()

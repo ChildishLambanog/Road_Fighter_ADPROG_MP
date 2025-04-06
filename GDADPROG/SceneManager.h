@@ -17,6 +17,7 @@ public:
 	void unloadScene();
 	bool isSceneLoaded(std::string name);
 	void checkLoadScene();
+	std::string getActiveScene();
 private:
 	SceneManager() {};
 	SceneManager(SceneManager const&) {};

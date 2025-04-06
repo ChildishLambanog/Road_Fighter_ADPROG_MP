@@ -18,6 +18,8 @@
 #include "PhysicsManager.h"
 
 
+
+
 GameScene::GameScene() : AbstractScene("GameScene")
 {
 }
@@ -58,7 +60,7 @@ void GameScene::onLoadObjects()
 
 	PhysicsManager::getInstance()->trackObject(carObject->collider);
 	
-
+	
 }
 
 void GameScene::onUnloadResources()

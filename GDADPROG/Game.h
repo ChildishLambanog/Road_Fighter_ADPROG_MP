@@ -14,6 +14,7 @@ public:
 	int fpsCount = 0;
 	int fps = 60;
 	const sf::Time  TimePerFrame = sf::seconds(1.f / 60.f);
+	bool isOver = false;
 private:
 	void processEvents();
 	void update(sf::Time);
@@ -25,9 +26,10 @@ private:
 	Entity mSampleEntity;
 	sf::Texture mTexture;
 	sf::Sprite mPlayer;
-	sf::Font font;
+	sf::Font* font;
 	sf::Text textFps;
 	sf::Text textUpdaterPerS;
+	sf::Text scoreText;
 	sf::Sound mSFX;
 	std::unordered_map<int, sf::SoundBuffer*> mSFXMapList;
 	std::vector<Entity*> mEntityList;

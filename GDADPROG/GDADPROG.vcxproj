@@ -167,6 +167,7 @@
     <ClCompile Include="Renderer.cpp" />
     <ClCompile Include="Road.cpp" />
     <ClCompile Include="SceneManager.cpp" />
+    <ClCompile Include="ScoreManager.cpp" />
     <ClCompile Include="SFXManager.cpp" />
     <ClCompile Include="TextureManager.cpp" />
     <ClCompile Include="TitleMenuScreen.cpp" />
@@ -208,6 +209,7 @@
     <ClInclude Include="Renderer.h" />
     <ClInclude Include="Road.h" />
     <ClInclude Include="SceneManager.h" />
+    <ClInclude Include="ScoreManager.h" />
     <ClInclude Include="SFXManager.h" />
     <ClInclude Include="TextureManager.h" />
     <ClInclude Include="TitleMenuScreen.h" />

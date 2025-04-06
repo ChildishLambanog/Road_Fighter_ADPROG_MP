@@ -18,7 +18,8 @@ public:
 	//sf::Transformable& getTransformable();
 	//sf::Drawable* getSprite();
 	Collider* collider;
-	int health = 3;	
+	std::vector<sf::Sprite*> deathSprites; // death sprites
+
 
 private:
 	const float SPEED_MULTIPLIER = 300.0f;
@@ -26,5 +27,6 @@ private:
 	bool moveDown = false;
 	bool moveLeft = false;
 	bool moveRight = false;
+	int death = 0;
 	
 };
