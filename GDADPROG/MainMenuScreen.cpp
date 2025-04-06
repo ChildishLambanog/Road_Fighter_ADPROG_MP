@@ -91,5 +91,4 @@ void MainMenuScreen::onButtonReleased(UIButton* button)
 		AGameObject* flag = GameObjectManager::getInstance()->findObjectByName("MainMenuScreen");
 		flag->setEnabled(false);
 	}
-
 }

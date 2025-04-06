@@ -5,11 +5,9 @@
 SFXManager* SFXManager::sharedInstance = NULL;
 
 void SFXManager::loadAll()
-{
-		
-		loadSound("boom", "Media/SFX/explosion_sfx.WAV");
-		loadSound("score", "Media/SFX/UI_SFX.wav");
-	
+{	
+	loadSound("boom", "Media/SFX/explosion_sfx.WAV");
+	loadSound("score", "Media/SFX/UI_SFX.wav");
 }
 
 void SFXManager::loadSound(std::string key, std::string path)

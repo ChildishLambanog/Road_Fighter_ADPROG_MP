@@ -11,14 +11,13 @@ void TextureManager::loadAll()
 	bgTex = getTexture("desert_bg");
 	bgTex->setRepeated(true);
 	loadTexture("Eagle", "Media/Textures/Player_Car.png"); //Player
-	//loadTexture("Raptor", "Media/Textures/Raptor.png");
-	//loadTexture("Raptor", "Media/Textures/Raptor.png");
 	loadTexture("Avenger", "Media/Textures/Enemy_Car1.png"); //Enemy Car 1
 	loadTexture("title_bg", "Media/Textures/f.png");
 	loadTexture("btn_normal", "Media/Textures/b_4.png");
 	loadTexture("btn_pressed", "Media/Textures/b_5.png");
 	loadTexture("bar_1", "Media/Textures/bar_1.png");
-	loadTexture("title_screen", "Media/UI/TitleScreenBG.png");
+	loadTexture("title_screen", "Media/UI/TitleScreenBG.png"); //Title Screen
+	loadTexture("GameOver_Screen", "Media/UI/Game_Over_Screen_BG.png"); //Game Over Screen
 	loadTexture("game_over", "Media/UI/GameOver.png");
 	loadTexture("skull", "Media/UI/Skull.png");
 

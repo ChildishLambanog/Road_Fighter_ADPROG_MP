@@ -9,6 +9,7 @@ public:
 
 	void loadAll();
 	sf::Texture* getTexture(std::string);
+	void loadTextureFromSpriteSheet(const std::string& key, size_t index);
 
 private:
 	TextureManager() {};

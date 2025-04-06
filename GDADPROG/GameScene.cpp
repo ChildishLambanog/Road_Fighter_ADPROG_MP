@@ -1,4 +1,5 @@
 #include "GameScene.h"
+#include "GameOverScreen.h"
 #include "Game.h"
 #include "TextureManager.h"
 #include "GameObjectManager.h"
@@ -44,7 +45,6 @@ void GameScene::onLoadObjects()
 	GameObjectManager::getInstance()->addObject(enemiesManager);
 
 
-
 	MainMenuScreen* mainMenu = new MainMenuScreen("MainMenuScreen");
 	GameObjectManager::getInstance()->addObject(mainMenu);
 	mainMenu->setEnabled(false);
@@ -55,6 +55,10 @@ void GameScene::onLoadObjects()
 
 	BarQuitButton* quitButton = new BarQuitButton("BarQuitButton");
 	GameObjectManager::getInstance()->addObject(quitButton);
+
+	GameOverScreen* gameOverScreen = new GameOverScreen("GameOverScreen");
+	GameObjectManager::getInstance()->addObject(gameOverScreen);
+	gameOverScreen->setEnabled(false);
 
 	PhysicsManager::getInstance()->trackObject(carObject->collider);
 	

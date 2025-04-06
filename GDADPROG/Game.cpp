@@ -25,8 +25,9 @@ Game::Game() : mWindow(sf::VideoMode(Game::WINDOW_WIDTH, Game::WINDOW_HEIGHT), "
 	ApplicationManager::getInstance()->initialize(&mWindow);
 	TextureManager::getInstance()->loadAll();
 	FontManager::getInstance()->loadAll();
-	SFXManager::getInstance()->loadAll();
 	SceneManager::getInstance()->registerScene(new GameScene());
+
+	SFXManager::getInstance()->loadAll();
 
 	TitleMenuScreen* titleMenu = new TitleMenuScreen("TitleMenuScreen");
 	GameObjectManager::getInstance()->addObject(titleMenu);
@@ -44,12 +45,12 @@ void Game::addSFX(std::string key)
 	sf::SoundBuffer* soundEffects = SFXManager::getInstance()->getSound(key);
 
 	
-	if (key == "SFX_1")
+	if (key == "boom")
 	{
 		mSFXMapList[0] = soundEffects;
 
 	}
-	else if (key == "SFX_2")
+	else if (key == "score")
 	{
 		mSFXMapList[1] = soundEffects;
 	}

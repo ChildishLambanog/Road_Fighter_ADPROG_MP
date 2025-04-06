@@ -3,6 +3,8 @@
 #include "TextureManager.h"
 #include "PlayerInputController.h"
 #include "PlayerMovement.h"
+#include "GameObjectManager.h"
+#include "ApplicationManager.h"
 #include "Game.h"
 #include "Renderer.h"
 #include "SFXManager.h"
@@ -19,7 +21,7 @@ void CarPlayer::initialize()
 	this->sprite->setTexture(*TextureManager::getInstance()->getTexture("Eagle"));
 	sf::Vector2u textureSize = sprite->getTexture()->getSize();
 	this->sprite->setOrigin(textureSize.x / 2, textureSize.y / 2);
-	this->transformable.setPosition(755, 650); //original spawn (500, 650), max left (230,650), max right (755, 650)
+	this->transformable.setPosition(500, 650); //original spawn (500, 650), max left (230,650), max right (755, 650)
 
 	PlayerInputController* inputController = new PlayerInputController("MyPlayerInput");
 	this->attachComponent(inputController);
@@ -33,8 +35,6 @@ void CarPlayer::initialize()
 	Renderer* renderer = new Renderer("PlayerSprite");
 	renderer->assignDrawable(sprite);
 	this->attachComponent(renderer);
-
-	/*sf::FloatRect globalBounds = sprite->getGlobalBounds();*/ //test later
 
 	this->collider = new Collider("playerCollider");
 	this->collider->setLocalBounds(sprite->getLocalBounds());
@@ -61,24 +61,27 @@ void CarPlayer::onCollisionEnter(AGameObject* contact)
 
 	if (contact->getName().find("enemy") != std::string::npos)
 	{
-		if (health > 0)
+		if (health > 1)
 		{
 			std::cout << "collided with " << contact->getName() << std::endl;
-			health--;
-			std::cout << "health: " << health << std::endl;
-			this->transformable.setPosition(755, 650); //original spawn (500, 650), max left (230,650), max right (755, 650)
-
+			health -= 1;
+			int healthShown = health;
+			std::cout << "Health Remaining: " << healthShown << std::endl;
+			this->transformable.setPosition(500, 650); //original spawn (500, 650)
+			sf::Sound pSound;
+			pSound.setBuffer(*SFXManager::getInstance()->getSound("boom"));
+			pSound.play();
 		}
-		else
+
+		else if (health == 1)
 		{
 			std::cout << "Game Over" << std::endl;
+			AGameObject* flag = GameObjectManager::getInstance()->findObjectByName("GameOverScreen");
+			flag->setEnabled(true);
+			ApplicationManager* UIManager = ApplicationManager::getInstance();
+			UIManager->pauseApplication();
 		}
-		sf::Sound pSound;
-		pSound.setBuffer(*SFXManager::getInstance()->getSound("boom"));
-		pSound.play();
-	
 	}
-
 }
 
 void CarPlayer::onCollisionExit(AGameObject* contact)
